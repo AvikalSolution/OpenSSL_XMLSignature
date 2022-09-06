@@ -67,7 +67,7 @@ namespace openssl_xml_envelope
         X509Certificate2 self_sign_cert=null;
         public XmlEnv()
         {
-             self_sign_cert=GetCertificate();
+            GetCertificate();
         }
         
         public void CreateXmlData(string filePath)
@@ -78,12 +78,11 @@ namespace openssl_xml_envelope
             xmldoc.Save("SignedXML.xml");
         }
 
-        public X509Certificate2 GetCertificate()
+        public void GetCertificate()
         {
             var rsa = RSA.Create(2048);
             var csr= new CertificateRequest("CN=avikal organisation", rsa, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
-            X509Certificate2 self_sign_cert = csr.CreateSelfSigned(DateTimeOffset.UtcNow.AddDays(365), DateTimeOffset.UtcNow.AddDays(365));
-            return self_sign_cert;
+            self_sign_cert = csr.CreateSelfSigned(DateTimeOffset.UtcNow.AddDays(365), DateTimeOffset.UtcNow.AddDays(365));
         }
        
         private XmlElement GetSignedXml()
