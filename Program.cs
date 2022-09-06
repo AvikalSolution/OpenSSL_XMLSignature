@@ -12,21 +12,27 @@ namespace openssl_xml_envelope
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("---- Create XML Data ---- ");
-            MakeData();
-            Console.WriteLine("---- File saved [Data.xml] ---- ");
-            
-            Console.WriteLine("===== XML Signature ==== ");
-            Console.WriteLine("Please specify data file path: ");
-            var filePath=Console.ReadLine();
-            XmlEnv _xmlEnv = new XmlEnv();
-            _xmlEnv.CreateXmlData(filePath);
-            Console.WriteLine("==== File saved [SignedXML.xml] ==== ");
-            
+            Console.WriteLine("---- Verify if sample file is present: Y/N ---- ");
+            var verifybool=Console.ReadKey().KeyChar;
+            XmlEnv _xmlEnv = new XmlEnv();            
+            if(char.ToLower(verifybool) != 'y')
+            {
+                Console.WriteLine("---- Create XML Data ---- ");
+                MakeData();
+                Console.WriteLine("---- File saved [Data.xml] ---- ");
+                
+                Console.WriteLine("===== XML Signature ==== ");
+                Console.WriteLine("Please specify data file path: ");
+                var filePath=Console.ReadLine();
+                
+                _xmlEnv.CreateXmlData(filePath);
+                Console.WriteLine("==== File saved [SignedXML.xml] ==== ");
+            }
+
             Console.WriteLine("---- Verify Signature ---- ");
             Console.WriteLine("Please specify signed XML data file path: ");
-            filePath=Console.ReadLine();
-            Console.WriteLine(_xmlEnv.VerifySignature(filePath));
+            var signed_filePath=Console.ReadLine();
+            Console.WriteLine(_xmlEnv.VerifySignature(signed_filePath));
         }
 
         static void MakeData()

@@ -1,9 +1,9 @@
 <data>
   <SenderName>Ramesh</SenderName>
-  <SenderBankName>citi</SenderBankName>
+  <SenderBankName>Citi</SenderBankName>
   <ReceiverName>Suresh</ReceiverName>
   <SenderAccount>1234</SenderAccount>
   <ReceiverBankName>hdfc</ReceiverBankName>
-  <ReceiverAccount>5678</ReceiverAccount>
+  <ReceiverAccount>4567</ReceiverAccount>
   <Amount>10000</Amount>
 </data>

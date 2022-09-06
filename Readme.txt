@@ -16,3 +16,9 @@ git status
 
 git commit - m "Initial Checkin"
 git log
+
+git remote add origin git@github.com:alexpchin/<reponame>.git
+git push -u origin master
+
+--git remote remove origin
+--git remote set-url origin git://new.url
