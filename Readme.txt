@@ -23,6 +23,11 @@ git push -u origin master
 --git remote remove origin
 --git remote set-url origin git://new.url
 
+git fetch origin
+git status
+git pull
+
+
 View PEM encoded certificate
    openssl x509 -in cert.pem -text -noout
 -->openssl x509 -in certificate.cer -text -noout
