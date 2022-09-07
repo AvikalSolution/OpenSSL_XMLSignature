@@ -1,9 +1,9 @@
 <data>
-  <SenderName>gg</SenderName>
-  <SenderBankName>ergw</SenderBankName>
-  <ReceiverName>gwtg</ReceiverName>
-  <SenderAccount>gw</SenderAccount>
-  <ReceiverBankName>twh</ReceiverBankName>
-  <ReceiverAccount>trehy</ReceiverAccount>
-  <Amount>t</Amount>
+  <SenderName>Ramesh</SenderName>
+  <SenderBankName>CitiBank</SenderBankName>
+  <ReceiverName>Suresh</ReceiverName>
+  <SenderAccount>1234</SenderAccount>
+  <ReceiverBankName>Hdfc</ReceiverBankName>
+  <ReceiverAccount>10000</ReceiverAccount>
+  <Amount>1000</Amount>
 </data>
