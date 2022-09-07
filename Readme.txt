@@ -47,11 +47,3 @@ Transform
  Remove the passphrase from the private key using openssl:
     openssl rsa -in EncryptedPrivateKey.pem -out PrivateKey.pem
 
-Ref:
-https://yetanotherchris.dev/net-core/ssl-public-private-key-in-netcore-by-example
-https://gist.github.com/svrooij/ec6f664cd93cd09e84414112d23f6a42
-https://paulstovell.com/x509certificate2/
-https://www.limilabs.com/blog/import-certificate-private-public-keys-pem-cer-pfx
-https://gist.github.com/yetanotherchris/d8330dd6f541f85903a9bdd5dd13bb1f
-https://theitbros.com/convert-crt-to-pem/
-https://support.citrix.com/article/CTX124783/how-to-convert-a-pkcs-7-certificate-to-pem-format-for-use-with-netscaler

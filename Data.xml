@@ -1,9 +1,0 @@
-<data>
-  <SenderName>Ramesh</SenderName>
-  <SenderBankName>CitiBank</SenderBankName>
-  <ReceiverName>Suresh</ReceiverName>
-  <SenderAccount>1234</SenderAccount>
-  <ReceiverBankName>Hdfc</ReceiverBankName>
-  <ReceiverAccount>10000</ReceiverAccount>
-  <Amount>1000</Amount>
-</data>
