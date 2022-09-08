@@ -15,7 +15,8 @@ namespace openssl_xml_envelope
         //Command cmd= new Command();
         public XmlEnv()
         {
-            GetCertificate();
+            //GetCertificate();
+            GetExistingCertificate();
         }
         
         public void CreateXmlData(string filePath)
@@ -24,6 +25,13 @@ namespace openssl_xml_envelope
             var signedXml = GetSignedXml();
             xmldoc.DocumentElement?.AppendChild(signedXml);
             xmldoc.Save("SignedXML.xml");
+        }
+        
+
+        public void GetExistingCertificate()
+        {
+            self_sign_cert= new X509Certificate2.CreateFromPemFile("certificate.pem");
+            
         }
 
         public void GetCertificate()
