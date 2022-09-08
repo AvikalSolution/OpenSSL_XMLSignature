@@ -30,7 +30,7 @@ namespace openssl_xml_envelope
 
         public void GetExistingCertificate()
         {
-            self_sign_cert= new X509Certificate2.CreateFromPemFile("certificate.pem");
+            self_sign_cert= X509Certificate2.CreateFromPemFile("certificate.pem");
             
         }
 
