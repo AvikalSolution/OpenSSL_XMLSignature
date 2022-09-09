@@ -30,7 +30,7 @@ namespace openssl_xml_envelope
 
         public void GetExistingCertificate()
         {
-            self_sign_cert= new X509Certificate2.CreateFromPemFile("certificate.pem");
+            self_sign_cert= X509Certificate2.CreateFromPemFile("certificate.pem");
             
         }
 
@@ -81,11 +81,17 @@ namespace openssl_xml_envelope
             
             signedXml.LoadXml((XmlElement) signatureElement[0]);
             
-            byte[] publicPemBytes = File.ReadAllBytes("certificate.pem");
-            X509Certificate2 publicCert = new X509Certificate2(publicPemBytes);
+            //byte[] publicPemBytes = File.ReadAllBytes("certificate.pem");
+            //X509Certificate2 publicCert = new X509Certificate2(publicPemBytes);
+            
             //1st version->var publicCert = new X509Certificate2(self_sign_cert.Export(X509ContentType.Cert));
-            //need 2 expore var publicCert = X509Certificate2.CreateFromPemFile("pem");
+            //var publicCert = X509Certificate2.CreateFromPemFile("certificate.pem");
             //2nd version-> X509Certificate2 publicCert = new X509Certificate2("certificate.cer");
+
+            var certPem =xml.GetElementsByTagName("X509Certificate")[0].InnerXml;
+            Console.WriteLine(certPem);
+            var publicCert = new X509Certificate2(Convert.FromBase64String(certPem));
+            
             return signedXml.CheckSignature((AsymmetricAlgorithm) publicCert.GetRSAPublicKey());
         }
 

@@ -34,7 +34,7 @@ namespace openssl_xml_envelope
             Console.WriteLine("---- Verify Signature ---- ");
             Console.WriteLine(">> Please specify signed XML data file path: ");
             var signed_filePath=Console.ReadLine();
-            Console.WriteLine(_xmlEnv.VerifySignature(signed_filePath));
+            Console.WriteLine("Is Signature Valid ? "+ _xmlEnv.VerifySignature(signed_filePath));
         }
 
         static void MakeData()
